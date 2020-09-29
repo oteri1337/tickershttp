@@ -94,10 +94,15 @@ socket.addEventListener("message", function ({ data }) {
   }
 });
 
+// disconnect
+socket.addEventListener("close", () => {
+  console.log("connection closed");
+});
+
 const app = express();
 
 app.get("*", (request, response) => {
-  return response.json({ data: finnihubdata, port: process.env.PORT });
+  return response.json({ finnihubdata });
 });
 
 app.listen(process.env.PORT || 1027, () => {
