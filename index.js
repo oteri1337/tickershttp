@@ -103,6 +103,10 @@ socket.addEventListener("close", () => {
   console.log(" ");
 });
 
+socket.addEventListener("error", (e) => {
+  console.log("error occured ", e);
+});
+
 const app = express();
 
 app.get("*", (request, response) => {
