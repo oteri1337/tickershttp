@@ -97,12 +97,16 @@ socket.addEventListener("message", function ({ data }) {
 // disconnect
 socket.addEventListener("close", () => {
   console.log("connection closed");
+  console.log(" ");
+  console.log(" ");
+  console.log(" ");
+  console.log(" ");
 });
 
 const app = express();
 
 app.get("*", (request, response) => {
-  return response.json({ finnihubdata });
+  return response.json(finnihubdata);
 });
 
 app.listen(process.env.PORT || 1027, () => {
