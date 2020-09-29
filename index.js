@@ -20,7 +20,7 @@ socket.addEventListener("open", function (event) {
   socket.send(subscribe("BINANCE:ZECUSDT"));
   socket.send(subscribe("BINANCE:LTCUSDT"));
   socket.send(subscribe("BINANCE:DASHUSDT"));
-  socket.send(subscribe("BINANCE:NEOSDT"));
+  socket.send(subscribe("BINANCE:NEOUSDT"));
   socket.send(subscribe("BINANCE:QTUMUSDT"));
   socket.send(subscribe("BINANCE:IOTAUSDT"));
   socket.send(subscribe("BINANCE:ADAUSDT"));
