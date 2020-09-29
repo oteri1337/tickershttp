@@ -1,3 +1,4 @@
+const cors = require("cors");
 const WebSocket = require("ws");
 const express = require("express");
 
@@ -103,11 +104,14 @@ socket.addEventListener("close", () => {
   console.log(" ");
 });
 
+// error
 socket.addEventListener("error", (e) => {
   console.log("error occured ", e);
 });
 
 const app = express();
+
+app.use(cors());
 
 app.get("*", (request, response) => {
   return response.json(finnihubdata);
