@@ -4,7 +4,7 @@ const express = require("express");
 
 let finnihubdata = {};
 
-const socket = new WebSocket("wss://ws.finnhub.io?token=btg5pp748v6r32agac1g");
+let socket = new WebSocket("wss://ws.finnhub.io?token=btg5pp748v6r32agac1g");
 
 function subscribe(symbol) {
   return JSON.stringify({ type: "subscribe", symbol });
@@ -31,22 +31,23 @@ socket.addEventListener("open", function (event) {
   //
 
   // stocks
-  socket.send(subscribe("V"));
-  socket.send(subscribe("MA"));
   socket.send(subscribe("FB"));
-  socket.send(subscribe("ZM"));
-  socket.send(subscribe("NKE"));
   socket.send(subscribe("AMD"));
-  socket.send(subscribe("ADBE"));
   socket.send(subscribe("AMZN"));
   socket.send(subscribe("AAPL"));
   socket.send(subscribe("TSLA"));
   socket.send(subscribe("NVDA"));
+  socket.send(subscribe("MSFT"));
+  socket.send(subscribe("ZM"));
+
   socket.send(subscribe("NLFX"));
   socket.send(subscribe("TWTR"));
   socket.send(subscribe("PYPL"));
-  socket.send(subscribe("MSFT"));
   socket.send(subscribe("GOOGL"));
+  socket.send(subscribe("V"));
+  socket.send(subscribe("MA"));
+  socket.send(subscribe("NKE"));
+  socket.send(subscribe("ADBE"));
 
   // forex - aud
   socket.send(subscribe("OANDA:AUD_USD"));
@@ -98,10 +99,7 @@ socket.addEventListener("message", function ({ data }) {
 // disconnect
 socket.addEventListener("close", () => {
   console.log("connection closed");
-  console.log(" ");
-  console.log(" ");
-  console.log(" ");
-  console.log(" ");
+  socket = new WebSocket("wss://ws.finnhub.io?token=btg5pp748v6r32agac1g");
 });
 
 // error
