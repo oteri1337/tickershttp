@@ -5,7 +5,7 @@ const express = require("express");
 let finnihubdata = {};
 
 function connectSocket() {
-  let socket = new WebSocket("wss://ws.finnhub.io?token=btg5pp748v6r32agac1g");
+  let socket = new WebSocket("wss://ws.finnhub.io?token=btunjb748v6q25697fng");
 
   function subscribe(symbol) {
     return JSON.stringify({ type: "subscribe", symbol });
