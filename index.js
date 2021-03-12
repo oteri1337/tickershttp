@@ -68,6 +68,23 @@ function connectSocket() {
     socket.send(subscribe("NKE"));
     socket.send(subscribe("ADBE"));
 
+    socket.send(subscribe("BB"));
+    socket.send(subscribe("PLTR"));
+
+    socket.send(subscribe("GME"));
+    socket.send(subscribe("AMC"));
+    socket.send(subscribe("CCIV"));
+    socket.send(subscribe("FUBO"));
+    socket.send(subscribe("AUVI"));
+    socket.send(subscribe("OLB"));
+    socket.send(subscribe("NIO"));
+    socket.send(subscribe("CLOV"));
+    socket.send(subscribe("OPGN"));
+    socket.send(subscribe("AEI"));
+    socket.send(subscribe("FUV"));
+    socket.send(subscribe("OTRK"));
+    socket.send(subscribe("JUPW"));
+
     // forex - aud
     socket.send(subscribe("OANDA:AUD_USD"));
     socket.send(subscribe("OANDA:AUD_JPY"));
